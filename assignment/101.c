@@ -1,24 +1,19 @@
 #include <stdio.h>
 
 int main() {
-	int size, i, j, sum=0; 
-	scanf("%d", &size);
+	int n, i, sum  =1;
+	printf("Enter a number: ");
+	scanf("%d", &n);
 	
-	int arr1[size];
-	int arr2[size];
-	int arr3[size];
-	
-	for (i=0; i<size; ++i) {
-		scanf("%d", &arr1[i]);
+	for (i=2; i<=n; ++i) {
+		if (i%2==0) {
+			sum += i*i;
+		} else {
+			sum += -i*i;
+		}
 	}
-	for (i=0; i<size; ++i) {
-		scanf("%d", &arr2[i]);
-	}
+	printf("The sum of the series is %d", sum);
 	
-	for (i=0; i<size; ++i) {
-		arr3[i] = arr1[i]*arr2[i];
-		sum += arr3[i];
-	}
-	printf("%f", (float)sum/size);
-	
+
+
 }
